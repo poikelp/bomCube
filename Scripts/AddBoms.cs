@@ -14,7 +14,7 @@ public class AddBoms : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetMouseButtonDown (0)) {
+		if (Input.GetMouseButtonDown (0) || Input.GetTouch(0).phase == TouchPhase.Began) {
 			transform.position = new Vector3 (getRandomfloat() , 0, getRandomfloat() );
 			Instantiate (bom, transform.position, transform.rotation);
 		}
