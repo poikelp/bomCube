@@ -14,6 +14,10 @@ public class SphereMaker : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		sphere = (GameObject)Resources.Load ("Prefab/sphere");
+		for (sphereCount = 0; sphereCount < spheresMass; sphereCount++) {
+			Instantiate (sphere, transform.position, transform.rotation);
+			transform.position = new Vector3 (getRandomfloat (), 0, getRandomfloat ());
+		}
 	}
 	
 	// Update is called once per frame
@@ -31,6 +35,6 @@ public class SphereMaker : MonoBehaviour {
 	}
 
 	float getRandomfloat () {
-		return Random.Range (-9, 9);
+		return Random.Range (-9.0f, 9.0f);
 	}
 }
